@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body background ="https://png.pngtree.com/back_origin_pic/04/12/72/138669d81cc6e4d3160ba74edec06ef3.jpg">
+  {% block title %} Welcome {% endblock %}
+  {%block mainContent %}
+    <header class="text-gray-600 body-font">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span class="ml-3 text-xl">List of students</span>
+          </a>
+          <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+            <b><u>
+            <a class="mr-5 hover:text-gray-900">Students of B.Tech (CSE)</a>
+            </u></b>
+          </nav>
+          <div class="flex items-center justify-center ">
+            <div class="flex border-2 border-gray-200 rounded" >
+                <input type="text" id = "speechToText" placeholder="Search..." onkeyup="functionmy()" >
+                <button class="px-4 text-white bg-gray-600 border-l "  onclick = "myfunction()">
+                    Speak
+                </button>
+                <button class="px-4 text-white bg-gray-600 border-l " onclick="functionmy()">
+                    Search
+                </button>
+            </div>
+        </div>
+        
+      </header>
+
+      <div class="flex flex-col">
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+            <div class="overflow-hidden">
+              <table class="min-w-full border text-center" id="myTable">
+      <thead class="bg-black border-b">
+        <tr>
+          <th scope="col" class="text-sm font-medium text-white px-6 py-4 border-r">
+            Name
+          </th>
+          <th scope="col" class="text-sm font-medium text-white px-6 py-4 border-r">
+            Student ID
+          </th>
+          <th scope="col" class="text-sm font-medium text-white px-6 py-4 border-r">
+            e-mail
+          </th>
+          <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+            grade
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+          <tr class="bg-white border-b">
+              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">Amit</td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+                128320
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+                amit@gehu.ac.in
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                A
+              </td>
+            </tr>
+        <tr class="bg-white border-b">
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">Aashutosh</td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            235337
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            aashutosh@gehu.ac.in
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            A
+          </td>
+        </tr>
+        <tr class="bg-white border-b">
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">Bhavya</td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            378372
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            Bhavya@gehu.ac.in
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            O
+          </td>
+        </tr>
+        <tr class="bg-white border-b">
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">Bhairavi</td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            343832
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            bhairavi@gehu.ac.in
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            B
+          </td>
+        </tr>
+        <tr class="bg-white border-b">
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">Chetan</td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            312244
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            chetan@gehu.ac.in
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            C
+          </td>
+        </tr>
+        <tr class="bg-white border-b">
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">Chirag</td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            212234
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            chiraag@gehu.ac.in
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            B
+          </td>
+        </tr>
+        <tr class="bg-white border-b">
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">Divya</td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            234242
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            divya@gehu.ac.in
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            B
+          </td>
+        </tr>
+        <tr class="bg-white border-b">
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">Dinesh</td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            234234
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            dinesh@gehu.ac.in
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            O
+          </td>
+        </tr>
+        <tr class="bg-white border-b">
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">Erika</td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            434423
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            erika@gehu.ac.in
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            A
+          </td>
+        </tr>
+        <tr class="bg-white border-b">
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">Faiz</td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            183393
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            faiz@gehu.ac.in
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            C
+          </td>
+        </tr>
+        <tr class="bg-white border-b">
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">Ganesh</td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            2123231
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            ganesh@gehu.ac.in
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            O
+          </td>
+        </tr>
+        <tr class="bg-white border-b">
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">Gauri</td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            2018341
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            gauri@gehu.ac.in
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            O
+          </td>
+        </tr>
+        <tr class="bg-white border-b">
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">Himanshu</td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            234534
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            himanshu@gehu.ac.in
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            C
+          </td>
+        </tr>
+        <tr class="bg-white border-b">
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">Isha</td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            453312
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            isha@gehu.ac.in
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            B
+          </td>
+        </tr>
+        <tr class="bg-white border-b">
+          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">Yash</td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            2018655
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap border-r">
+            yash@gehu.ac.in
+          </td>
+          <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+            O
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+</div>
+
+<script>
+
+function myfunction(){
+                var recognition = new webkitSpeechRecognition();
+            recognition.lang = "en-GB";
+            recognition.onresult = function(event){
+                document.getElementById('speechToText').value=event.results[0][0].transcript;
+            }
+            recognition.start();
+        }
+
+  function functionmy() {
+    // Declare variables
+    var input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("speechToText");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+  </script>
+      <footer class="text-gray-600 body-font">
+        <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+    <a href = "/logout">
+    <button class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">PREVIOUS</button>
+    </a>
+    </div>
+</footer>     
+{% endblock %}
+</body>
+</html>
